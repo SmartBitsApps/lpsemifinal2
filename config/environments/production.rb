@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   # Devise
-  config.action_mailer.default_url_options = { host: 'lpsemifinal2.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: ENV['MAIL_HOST_PROD'] }
   
   # i18n translation change -> :cs
   config.i18n.available_locales = :cs

@@ -9,7 +9,15 @@ cs:
       cancel: "Zrušit"
       confirm: "Opravdu chcete tuto položku odstranit?"
       back: "Zpět"
-      
-  #title: "Nadpisss"
   
+  #user.role
+  pending: "Nevyřízeno"
+  user: "Uživatel"
+  manager: "Manažer"
+  admin: "Administrátor"
+  
+  #user.status
+  banned: "Zakázaný"
+  inactive: "Neaktivní"
+  active: "Aktivní"
   

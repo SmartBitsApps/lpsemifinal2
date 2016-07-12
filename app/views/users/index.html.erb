@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Uživatelé</h2>
+  <p>Přehled všech uživatelů v systému :</p>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Jméno</th>
+        <th>Registrace</th>
+        <th>Email</th>
+        <th>Potvrzeno</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Přihlášen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% for user in @users %>
+            <td><%= user.first_name + ' ' + user.last_name %></td>
+            <td>před <%= time_ago_in_words(user.created_at) %></td>
+            <td><%= user.email %></td>
+            <td><%= user.confirmed_at.strftime("%d.%m v %l:%Mh") %></td>
+            <td><%= t(user.role) %></td>
+            <td><%= t(user.status) %></td>
+            <td><%= user.sign_in_count %>x</td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20160712140835) do
     t.datetime "locked_at"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "role"
-    t.string   "status"
+    t.integer  "role"
+    t.integer  "status"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

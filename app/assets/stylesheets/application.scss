@@ -13,3 +13,27 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "custom";
+
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.alert {
+  
+  display: block;
+}

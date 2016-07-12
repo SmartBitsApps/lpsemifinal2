@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Semifinal</title>
+  <%= viewport_meta_tag(:maximum_scale => "1.0") %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  
+  <%= bootstrap_flash %>
+  
+  <%= yield %>
 
 </body>
 </html>

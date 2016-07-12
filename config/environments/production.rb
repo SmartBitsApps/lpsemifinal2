@@ -76,4 +76,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # Devise
+  config.action_mailer.default_url_options = { host: 'lpsemifinal2.herokuapp.com' }
+  
+  # i18n translation change -> :cs
+  config.i18n.available_locales = :cs
+  config.i18n.default_locale = :cs
 end

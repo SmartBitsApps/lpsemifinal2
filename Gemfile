@@ -40,7 +40,6 @@ gem 'font-awesome-sass', '~> 4.6', '>= 4.6.2'
 
 #gem 'bundler', '~> 1.12', '>= 1.12.5'
 gem 'jquery-turbolinks', '~> 2.1'
-gem 'annotate', '~> 2.7'
 gem 'rails', '~> 4.2', '>= 4.2.6'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
@@ -70,6 +69,7 @@ group :test do
 end
 
 group :development do
+  gem 'annotate'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.1', '>= 3.1.1'
   gem 'spring', '~> 1.6', '>= 1.6.4'

@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
-  
+  resources :accounts
+  #get 'accounts/index'
+
+  #get 'accounts/show'
+
+  #get 'accounts/new'
+
+  #get 'accounts/create'
+
+  #get 'accounts/edit'
+
   root 'welcome#index'
   devise_for :users
-  resources :users
+  resources :users do
+    resource :account
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
+  #before_action :set_users_account, only: [:index]
+  
+  
   #after_action :verify_authorized
   
   def index
@@ -34,16 +37,16 @@ class UsersController < ApplicationController
   
   private
   
-    def full_name
-		  self.full_name = [first_name, last_name].join(' ')
-	  end
-  
     def set_user
       @user = User.find(params[:id])
     end
+    
 
     def secure_params
-      params.require(:user).permit(:first_name, :last_name, :email, :role, :status)
+      params.require(:user).permit(:first_name, :last_name, :email, :role, :status,
+                                  account_attributes: [:birth_name])
+                                  
+                                  # add account nested columns)
     end
   
 end

@@ -1,0 +1,24 @@
+<h4>Účet patří :</h4>
+<p>Jméno : <%= @user.first_name + ' ' + @user.last_name %></p>
+<p>user_id <%= @user.account.user_id %></p>
+<p>account_id <%= @user.account.id %></p>
+<p>@user.id <%= @user.id %></p>
+<br>
+<hr>
+<br>
+<h3>Právě prohlíží :</h3>
+<p>current_user.id <%= current_user.id %></p>
+<p>Role : <%= current_user.role %></p>
+<p>Jméno : <%= current_user.first_name + ' ' + current_user.last_name %></p>
+
+
+
+<%= simple_form_for @user do |m| %>
+    <%= field_set_tag 'Account' do %>
+      <%= m.simple_fields_for(@user.account) do |pf| %>
+        <%= pf.input :birth_name %>
+        <%= pf.button :submit %>
+      <% end %>
+    <% end %>
+  
+<% end %>

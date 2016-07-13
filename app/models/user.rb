@@ -33,6 +33,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable
+  
+  
+  has_one :account, dependent: :destroy
+  accepts_nested_attributes_for :account
+  
          
   # Devise validates email and password automatically
   validates_presence_of :first_name
@@ -40,11 +45,19 @@ class User < ActiveRecord::Base
   
   enum role: [:pending, :user, :manager, :admin]
   enum status: [:banned, :inactive, :active]
+  
+  # sets default settings and build account for user
   after_initialize :set_default_role_and_status, :if => :new_record?
-
+  after_initialize :build_new_account, :if => :new_record?
+  
   def set_default_role_and_status
     self.role ||= :pending
     self.status ||= :inactive
   end
+  
+  def build_new_account
+    self.account ||= self.build_account()
+  end
+
   
 end

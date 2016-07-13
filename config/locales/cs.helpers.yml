@@ -11,7 +11,7 @@ cs:
       back: "Zpět"
   
   #user.role
-  pending: "Nevyřízeno"
+  pending: "Návštěvník"
   user: "Uživatel"
   manager: "Manažer"
   admin: "Administrátor"
@@ -20,4 +20,9 @@ cs:
   banned: "Zakázaný"
   inactive: "Neaktivní"
   active: "Aktivní"
+  
+  #user.account.status
+  started: "Nevytvořen"
+  completed: "Kompletní"
+  ended: "Zakázáno"
   

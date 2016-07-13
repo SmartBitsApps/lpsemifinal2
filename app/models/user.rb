@@ -22,8 +22,8 @@
 #  locked_at              :datetime
 #  first_name             :string
 #  last_name              :string
-#  role                   :string
-#  status                 :string
+#  role                   :integer
+#  status                 :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #

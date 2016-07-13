@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @account = @user.account
     #authorize @user
   end
   

@@ -1,10 +1,4 @@
-<h1>Accounts#edit</h1>
-<p>Find me in app/views/accounts/edit.html.erb</p>
-<h4>Účet patří :</h4>
-<p>Jméno : <%= @user.first_name + ' ' + @user.last_name %></p>
-<p>user_id <%= @user.account.user_id %></p>
-<p>account_id <%= @user.account.id %></p>
-<p>@user.id <%= @user.id %></p>
+<h1>Upravujete účet : <%= @account.user.first_name + ' ' + @account.user.last_name %></h1>
 <br>
 <hr>
 <br>
@@ -12,3 +6,24 @@
 <p>current_user.id <%= current_user.id %></p>
 <p>Role : <%= current_user.role %></p>
 <p>Jméno : <%= current_user.first_name + ' ' + current_user.last_name %></p>
+
+<%= simple_form_for @account, html: { multipart: true, class: 'form-horizontal' }, wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean: :horizontal_boolean } do |f| %>
+    <div class="col-sm-offset-3 col-sm-9"><%= f.error_notification %></div>
+  <div class="form-inputs">
+    
+    
+    
+    <%= f.input :birth_name, label: 'Rodné příjmení' %>
+    <!--TODO: gender-->
+    <%= f.input :birth_place, label: 'Místo narození' %>
+    <%= f.input :birth_number, label: 'Rodné číslo' %>
+  </div>
+    
+  <div class="form-group"> 
+    <div class='col-sm-offset-3 col-sm-9'>
+      <%= f.button :submit, class: 'btn-success' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                  accounts_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

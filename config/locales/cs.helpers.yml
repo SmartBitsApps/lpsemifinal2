@@ -22,7 +22,7 @@ cs:
   active: "Aktivní"
   
   #user.account.status
-  started: "Nevytvořen"
+  started: "Nekompletní"
   completed: "Kompletní"
   ended: "Zakázáno"
   
